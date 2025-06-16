@@ -1,0 +1,100 @@
+.projects {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  text-align: center;
+  padding: 80px 0 40px 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  background: rgba(30, 34, 45, 0.85);
+  backdrop-filter: blur(4px);
+  box-shadow: none;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+.project-card {
+  background: rgba(40, 44, 60, 0.6);
+  backdrop-filter: blur(10px) saturate(180%);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  padding: 1.5rem;
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+  color: #fff;
+  opacity: 1;
+  transform: none;
+}
+.project-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+.project-card h3 {
+  color: #90caf9;
+}
+.project-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.22);
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.project-preview-overlay {
+  position: fixed;
+  z-index: 99999;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s;
+}
+.project-preview {
+  background: rgba(30,34,45,0.95);
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  text-align: center;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.project-preview img {
+  max-width: 60vw;
+  max-height: 60vh;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+.project-preview h3 {
+  color: #90caf9;
+  margin-bottom: 0.5rem;
+}
+.project-preview p {
+  color: #fff;
+}
+.projects h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #90caf9;
+} 
