@@ -1,43 +1,107 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import './App.css'
-import Hero from './components/Hero';
-import About from './components/About';
-import Projects from './components/Projects';
-import Resume from './components/Resume';
-import Contact from './components/Contact';
-import Header from './components/Header';
-
-const projects = [
-  { title: '智慧導遊-AI帶你玩轉花蓮', imgs: ['/images/1.png'], desc: '專案一簡介', link: 'https://invigorated-example-485041.framer.app' },
-  { title: 'RAG ON CLASS', imgs: ['/images/2.png', '/images/2-1.png'], desc: '專案二簡介', link: 'https://larryinmexico.github.io/RAG_on_class/frontend/index.html' },
-  { title: '政大廁所系統', imgs: ['/images/3.png'], desc: '專案三簡介', link: 'https://nccu-dbms-g5.vercel.app' },
-];
+import Header from './components/Header'
+import Hero from './components/Hero'
+import About from './components/About'
+import Projects from './components/Projects'
+import Contact from './components/Contact'
+import Background3D from './components/Background3D'
 
 function App() {
-  const [preview, setPreview] = useState(null);
+  const [currentSection, setCurrentSection] = useState('home')
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY })
+    }
+
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'projects', 'contact']
+      const scrollPosition = window.scrollY + window.innerHeight / 2
+      
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i])
+        if (section && scrollPosition >= section.offsetTop) {
+          setCurrentSection(sections[i])
+          break
+        }
+      }
+    }
+
+    // Loading animation
+    setTimeout(() => setIsLoading(false), 2000)
+
+    window.addEventListener('mousemove', handleMouseMove)
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
-    <div className="App">
-      <Header />
-      <section id="hero"><Hero /></section>
-      <section id="about"><About /></section>
-      <section id="projects">
-        <Projects setPreview={setPreview} />
-      </section>
-      <section id="resume"><Resume /></section>
-      <section id="contact"><Contact /></section>
-      {preview !== null && (
-        <div className="project-preview-overlay" onClick={() => setPreview(null)}>
-          <div className="project-preview" onClick={e => e.stopPropagation()}>
-            {projects[preview].imgs.map((img, idx) => (
-              <img key={idx} src={img} alt={projects[preview].title} style={{ marginBottom: '1.5rem' }} />
-            ))}
-            <h3>{projects[preview].title}</h3>
-          </div>
-        </div>
-      )}
+    <div className="app">
+      {/* Loading Screen */}
+      <AnimatePresence>
+        {isLoading && (
+          <motion.div
+            className="loading-screen"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="loading-content">
+              <div className="loading-logo">WC</div>
+              <div className="loading-text">載入中...</div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* 3D Background */}
+      <Background3D />
+      
+      {/* Cursor Glow Effect */}
+      <motion.div 
+        className="cursor-glow" 
+        animate={{
+          x: mousePosition.x - 100,
+          y: mousePosition.y - 100,
+        }}
+        transition={{
+          type: "spring",
+          damping: 10,
+          stiffness: 50,
+          restDelta: 0.001
+        }}
+      />
+      
+      {/* Animated Background */}
+      <div className="background-container">
+        <div className="gradient-bg"></div>
+      </div>
+
+      {/* Navigation */}
+      <Header currentSection={currentSection} setCurrentSection={setCurrentSection} />
+      
+      {/* Main Content */}
+      <main className="main-content">
+        <section id="home">
+          <Hero setCurrentSection={setCurrentSection} />
+        </section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
     </div>
   )
 }

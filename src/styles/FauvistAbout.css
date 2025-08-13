@@ -1,0 +1,375 @@
+/* Fauvist About Styles */
+.fauvist-about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 4rem 2rem;
+}
+
+.fauvist-about-content {
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.fauvist-about-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.fauvist-title-decoration {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.fauvist-brush-line {
+  height: 6px;
+  border-radius: 3px;
+  animation: fauvistBrushLineMove 3s ease-in-out infinite;
+}
+
+.line-1 {
+  width: 60px;
+  background: #ff6b35;
+  animation-delay: 0s;
+}
+
+.line-2 {
+  width: 80px;
+  background: #f7931e;
+  animation-delay: 0.5s;
+}
+
+.line-3 {
+  width: 50px;
+  background: #c60c30;
+  animation-delay: 1s;
+}
+
+@keyframes fauvistBrushLineMove {
+  0%, 100% {
+    transform: scaleX(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scaleX(1.2);
+    opacity: 1;
+  }
+}
+
+.fauvist-about-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.fauvist-about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.fauvist-text-block {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem;
+  border-radius: 25px;
+  border: 5px solid #ff6b35;
+  box-shadow: 8px 8px 0px #000;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.fauvist-text-block:hover {
+  transform: translateY(-5px) rotate(1deg);
+  box-shadow: 12px 12px 0px #000;
+}
+
+.block-1 {
+  border-color: #ff6b35;
+}
+
+.block-2 {
+  border-color: #f7931e;
+  transform: rotate(-1deg);
+}
+
+.block-3 {
+  border-color: #c60c30;
+  transform: rotate(1deg);
+}
+
+.fauvist-text-block h3 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #333;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.fauvist-text-block p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+}
+
+.fauvist-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.fauvist-skill {
+  display: inline-block;
+  padding: 8px 15px;
+  background: #ff6b35;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 2px solid #000;
+  box-shadow: 3px 3px 0px #000;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.fauvist-skill:nth-child(2) { background: #f7931e; }
+.fauvist-skill:nth-child(3) { background: #ffb400; }
+.fauvist-skill:nth-child(4) { background: #c60c30; }
+.fauvist-skill:nth-child(5) { background: #9b59b6; }
+
+.fauvist-skill:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0px #000;
+}
+
+.fauvist-about-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.fauvist-portrait {
+  position: relative;
+}
+
+.fauvist-portrait-frame {
+  width: 250px;
+  height: 250px;
+  border: 8px solid #ff6b35;
+  border-radius: 50%;
+  box-shadow: 10px 10px 0px #000;
+  position: relative;
+  background: linear-gradient(135deg, #f7931e, #ffb400);
+  animation: fauvistPortraitFloat 6s ease-in-out infinite;
+}
+
+@keyframes fauvistPortraitFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+.fauvist-portrait-content {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff6b35, #c60c30);
+}
+
+.fauvist-avatar-placeholder {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #000;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+}
+
+.fauvist-avatar-placeholder span {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ff6b35;
+  text-shadow: 2px 2px 0px #000;
+}
+
+.fauvist-color-palette {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.fauvist-color-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0px #000;
+  animation: fauvistColorPulse 4s ease-in-out infinite;
+}
+
+.color-1 {
+  background: #ff6b35;
+  animation-delay: 0s;
+}
+
+.color-2 {
+  background: #f7931e;
+  animation-delay: 0.5s;
+}
+
+.color-3 {
+  background: #ffb400;
+  animation-delay: 1s;
+}
+
+.color-4 {
+  background: #c60c30;
+  animation-delay: 1.5s;
+}
+
+.color-5 {
+  background: #9b59b6;
+  animation-delay: 2s;
+}
+
+@keyframes fauvistColorPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.fauvist-about-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.fauvist-paint-stroke {
+  position: absolute;
+  height: 150px;
+  width: 30px;
+  opacity: 0.1;
+  animation: fauvistPaintStrokeMove 12s ease-in-out infinite;
+}
+
+.stroke-bg-1 {
+  background: linear-gradient(180deg, transparent, #ff6b35, transparent);
+  top: 10%;
+  left: 10%;
+  transform: rotate(45deg);
+  animation-delay: 0s;
+}
+
+.stroke-bg-2 {
+  background: linear-gradient(180deg, transparent, #f7931e, transparent);
+  bottom: 20%;
+  right: 15%;
+  transform: rotate(-30deg);
+  animation-delay: 4s;
+}
+
+.stroke-bg-3 {
+  background: linear-gradient(180deg, transparent, #c60c30, transparent);
+  top: 60%;
+  left: 60%;
+  transform: rotate(15deg);
+  animation-delay: 8s;
+}
+
+@keyframes fauvistPaintStrokeMove {
+  0%, 100% {
+    opacity: 0.05;
+    transform: translateY(0px) rotate(45deg);
+  }
+  50% {
+    opacity: 0.15;
+    transform: translateY(-30px) rotate(60deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .fauvist-about {
+    padding: 2rem 1rem;
+  }
+  
+  .fauvist-about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .fauvist-about-text {
+    gap: 2rem;
+  }
+  
+  .fauvist-text-block {
+    padding: 2rem;
+    transform: none !important;
+  }
+  
+  .fauvist-portrait-frame {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .fauvist-avatar-placeholder {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .fauvist-avatar-placeholder span {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fauvist-text-block {
+    padding: 1.5rem;
+  }
+  
+  .fauvist-text-block h3 {
+    font-size: 1.5rem;
+  }
+  
+  .fauvist-text-block p {
+    font-size: 1rem;
+  }
+  
+  .fauvist-portrait-frame {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .fauvist-color-circle {
+    width: 35px;
+    height: 35px;
+  }
+}

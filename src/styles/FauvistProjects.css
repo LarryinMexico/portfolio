@@ -1,0 +1,285 @@
+/* Fauvist Projects Styles */
+.fauvist-projects {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fauvist-projects-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.fauvist-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.fauvist-project-card {
+  background: #fff;
+  border-radius: 25px;
+  border: 5px solid var(--card-color);
+  box-shadow: 10px 10px 0px #000;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.fauvist-project-card:hover {
+  transform: translateY(-10px) rotate(1deg);
+  box-shadow: 15px 15px 0px #000;
+}
+
+.fauvist-project-image-container {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.fauvist-project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.fauvist-project-card:hover .fauvist-project-image {
+  transform: scale(1.1);
+}
+
+.fauvist-project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--card-color);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.fauvist-project-card:hover .fauvist-project-overlay {
+  opacity: 0.9;
+}
+
+.fauvist-project-view {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0px #000;
+}
+
+.fauvist-project-content {
+  padding: 2rem;
+  position: relative;
+}
+
+.fauvist-project-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--card-color);
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 0px #000;
+}
+
+.fauvist-project-intro {
+  margin-bottom: 1.5rem;
+}
+
+.fauvist-project-description {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.fauvist-project-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fauvist-project-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--card-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: 700;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0px #000;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.fauvist-project-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0px #000;
+}
+
+.fauvist-project-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.fauvist-paint-dot {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: fauvistDotFloat 4s ease-in-out infinite;
+}
+
+.dot-1 {
+  width: 15px;
+  height: 15px;
+  background: #ff6b35;
+  top: 20px;
+  right: 20px;
+  animation-delay: 0s;
+}
+
+.dot-2 {
+  width: 12px;
+  height: 12px;
+  background: #f7931e;
+  bottom: 30px;
+  left: 30px;
+  animation-delay: 1s;
+}
+
+.dot-3 {
+  width: 10px;
+  height: 10px;
+  background: #c60c30;
+  top: 50%;
+  right: 30px;
+  animation-delay: 2s;
+}
+
+@keyframes fauvistDotFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.fauvist-projects-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.fauvist-bg-shape {
+  position: absolute;
+  opacity: 0.1;
+  animation: fauvistBgShapeMove 15s ease-in-out infinite;
+}
+
+.bg-shape-1 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #ff6b35 0%, transparent 70%);
+  top: 10%;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.bg-shape-2 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #f7931e 0%, transparent 70%);
+  bottom: 20%;
+  right: -80px;
+  animation-delay: 5s;
+}
+
+.bg-shape-3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #c60c30 0%, transparent 70%);
+  top: 60%;
+  left: 50%;
+  animation-delay: 10s;
+}
+
+@keyframes fauvistBgShapeMove {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(50px, -50px) rotate(180deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .fauvist-projects {
+    padding: 2rem 1rem;
+  }
+  
+  .fauvist-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 500px;
+  }
+  
+  .fauvist-project-card {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .fauvist-project-image-container {
+    height: 200px;
+  }
+  
+  .fauvist-project-content {
+    padding: 1.5rem;
+  }
+  
+  .fauvist-project-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fauvist-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 350px;
+  }
+  
+  .fauvist-project-card {
+    max-width: 350px;
+  }
+  
+  .fauvist-project-image-container {
+    height: 180px;
+  }
+}

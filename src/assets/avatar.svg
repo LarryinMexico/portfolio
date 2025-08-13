@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <linearGradient id="avatarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF8C00;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF7F50;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2C3E50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34495E;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glowEffect" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFA500;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background Glow -->
+  <circle cx="25" cy="25" r="25" fill="url(#glowEffect)"/>
+  
+  <!-- Main Avatar Circle -->
+  <circle cx="25" cy="25" r="20" fill="url(#avatarGradient)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+  
+  <!-- Modern Geometric Face -->
+  <g transform="translate(25,25)">
+    <!-- Head Shape -->
+    <circle cx="0" cy="-3" r="10" fill="rgba(255,255,255,0.9)" opacity="0.8"/>
+    
+    <!-- Modern Eyes -->
+    <rect x="-6" y="-6" width="2" height="2" rx="1" fill="#2C3E50"/>
+    <rect x="4" y="-6" width="2" height="2" rx="1" fill="#2C3E50"/>
+    
+    <!-- Nose (minimal) -->
+    <circle cx="0" cy="-3" r="0.5" fill="#E0E0E0"/>
+    
+    <!-- Mouth (modern line) -->
+    <path d="M -2 1 Q 0 3 2 1" stroke="#2C3E50" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    
+    <!-- Body/Shoulders -->
+    <rect x="-8" y="8" width="16" height="10" rx="8" fill="url(#bodyGradient)" opacity="0.9"/>
+  </g>
+  
+  <!-- Modern Tech Elements -->
+  <g opacity="0.6">
+    <circle cx="35" cy="15" r="2" fill="none" stroke="#FFA500" stroke-width="1"/>
+    <rect x="8" y="35" width="3" height="3" rx="1" fill="#FFA500" opacity="0.7"/>
+    <polygon points="40,35 42,37 40,39 38,37" fill="#FFA500" opacity="0.7"/>
+  </g>
+</svg>

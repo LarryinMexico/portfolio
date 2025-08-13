@@ -1,0 +1,330 @@
+/* Fauvist Hero Styles */
+.fauvist-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 4rem 2rem;
+  overflow: hidden;
+}
+
+.fauvist-hero-content {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+}
+
+.fauvist-hero-text {
+  text-align: left;
+}
+
+.fauvist-hero-title {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.fauvist-word {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000;
+  animation: fauvistWordFloat 6s ease-in-out infinite;
+}
+
+.word-1 {
+  color: #ff6b35;
+  animation-delay: 0s;
+}
+
+.word-2 {
+  color: #fff;
+  font-size: 2rem;
+  animation-delay: 0.5s;
+}
+
+.word-3 {
+  color: #f7931e;
+  animation-delay: 1s;
+}
+
+.word-4 {
+  color: #fff;
+  font-size: 2rem;
+  animation-delay: 1.5s;
+}
+
+.word-5 {
+  color: #c60c30;
+  animation-delay: 2s;
+}
+
+@keyframes fauvistWordFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.fauvist-hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  line-height: 1.4;
+}
+
+.fauvist-hero-buttons {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.fauvist-hero-visual {
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fauvist-shape {
+  position: absolute;
+  border-radius: 50%;
+  animation: fauvistShapeMove 8s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, #ff6b35 0%, #f7931e 100%);
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+  box-shadow: 5px 5px 20px rgba(255, 107, 53, 0.5);
+}
+
+.shape-2 {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #f7931e 0%, #ffb400 100%);
+  top: 60%;
+  right: 20%;
+  animation-delay: 1s;
+  box-shadow: 5px 5px 15px rgba(247, 147, 30, 0.5);
+}
+
+.shape-3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #c60c30 0%, #9b59b6 100%);
+  top: 30%;
+  right: 5%;
+  animation-delay: 2s;
+  box-shadow: 5px 5px 25px rgba(198, 12, 48, 0.5);
+}
+
+.shape-4 {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #9b59b6 0%, #ff6b35 100%);
+  bottom: 20%;
+  left: 30%;
+  animation-delay: 3s;
+  box-shadow: 5px 5px 10px rgba(155, 89, 182, 0.5);
+}
+
+.shape-5 {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #ffb400 0%, #c60c30 100%);
+  top: 5%;
+  left: 60%;
+  animation-delay: 4s;
+  box-shadow: 5px 5px 15px rgba(255, 180, 0, 0.5);
+}
+
+@keyframes fauvistShapeMove {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate(20px, -20px) rotate(90deg) scale(1.1);
+  }
+  50% {
+    transform: translate(-10px, 30px) rotate(180deg) scale(0.9);
+  }
+  75% {
+    transform: translate(30px, 10px) rotate(270deg) scale(1.05);
+  }
+}
+
+.fauvist-paint-splash {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: fauvistSplashPulse 4s ease-in-out infinite;
+}
+
+.splash-1 {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #ff6b35 30%, transparent 70%);
+  top: 50%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.splash-2 {
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #f7931e 30%, transparent 70%);
+  bottom: 30%;
+  right: 40%;
+  animation-delay: 1.5s;
+}
+
+.splash-3 {
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, #c60c30 30%, transparent 70%);
+  top: 20%;
+  right: 30%;
+  animation-delay: 3s;
+}
+
+@keyframes fauvistSplashPulse {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.fauvist-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.fauvist-bg-element {
+  position: absolute;
+  opacity: 0.1;
+  animation: fauvistBgMove 20s linear infinite;
+}
+
+.bg-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #ff6b35 0%, transparent 70%);
+  top: -100px;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.bg-2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #f7931e 0%, transparent 70%);
+  bottom: -50px;
+  right: -50px;
+  animation-delay: 7s;
+}
+
+.bg-3 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #c60c30 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  animation-delay: 14s;
+}
+
+@keyframes fauvistBgMove {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  100% {
+    transform: translate(100px, -100px) rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .fauvist-hero {
+    padding: 2rem 1rem;
+  }
+  
+  .fauvist-hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .fauvist-hero-text {
+    text-align: center;
+  }
+  
+  .fauvist-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .fauvist-hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .fauvist-hero-buttons {
+    justify-content: center;
+  }
+  
+  .fauvist-hero-visual {
+    height: 300px;
+  }
+  
+  .fauvist-shape {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 480px) {
+  .fauvist-hero-title {
+    font-size: 2rem;
+  }
+  
+  .word-2, .word-4 {
+    font-size: 1.5rem;
+  }
+  
+  .fauvist-hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .fauvist-hero-visual {
+    height: 250px;
+  }
+  
+  .fauvist-hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
